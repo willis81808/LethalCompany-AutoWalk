@@ -1,0 +1,38 @@
+﻿<Project Sdk="LethalCompany.Plugin.Sdk/1.0.0">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.1</TargetFramework>
+    <Nullable>enable</Nullable>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+
+    <RootNamespace>AutoWalk</RootNamespace>
+
+    <Title>AutoWalk</Title>
+    <Description>Getting pinky cramps? Try AutoWalk!</Description>
+    <PluginId>com.willis.lc.autowalk</PluginId>
+    <Version>0.0.1</Version>
+    <ThunderWebsiteUrl>https://github.com/willis81808/LethalSettings</ThunderWebsiteUrl>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ThunderDependency Include="Evaisa-HookGenPatcher-0.0.5" />
+    <ThunderDependency Include="Rune580-LethalCompany_InputUtils-0.4.4" />
+  </ItemGroup>
+  
+  <ItemGroup>
+    <Reference Include="LethalCompanyInputUtils">
+      <HintPath>..\..\..\..\AppData\Roaming\Thunderstore Mod Manager\DataFolder\LethalCompany\profiles\Mod Development\BepInEx\plugins\Rune580-LethalCompany_InputUtils\LethalCompanyInputUtils.dll</HintPath>
+    </Reference>
+    <Reference Include="LethalSettings">
+      <HintPath>..\..\..\..\AppData\Roaming\Thunderstore Mod Manager\DataFolder\LethalCompany\profiles\Mod Development\BepInEx\plugins\LethalSettings.dll</HintPath>
+    </Reference>
+    <Reference Include="MMHOOK_Assembly-CSharp">
+      <HintPath>..\..\..\..\AppData\Roaming\Thunderstore Mod Manager\DataFolder\LethalCompany\profiles\Mod Development\BepInEx\plugins\MMHOOK\MMHOOK_Assembly-CSharp.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  
+  <Target Name="PostBuild" AfterTargets="PostBuildEvent">
+    <Exec Command="xcopy &quot;$(TargetDir)\AutoWalk.dll&quot; &quot;C:\Users\Reid Willis\AppData\Roaming\Thunderstore Mod Manager\DataFolder\LethalCompany\profiles\Mod Development\BepInEx\plugins&quot; /Y" />
+  </Target>
+
+</Project>
