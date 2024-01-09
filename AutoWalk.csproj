@@ -11,7 +11,7 @@
     <Description>Getting pinky cramps? Try AutoWalk!</Description>
     <PluginId>com.willis.lc.autowalk</PluginId>
     <Version>0.0.1</Version>
-    <ThunderWebsiteUrl>https://github.com/willis81808/LethalSettings</ThunderWebsiteUrl>
+    <ThunderWebsiteUrl>https://github.com/willis81808/LethalCompany-AutoWalk</ThunderWebsiteUrl>
   </PropertyGroup>
 
   <ItemGroup>
