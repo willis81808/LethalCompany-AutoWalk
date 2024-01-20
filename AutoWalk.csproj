@@ -8,26 +8,29 @@
     <RootNamespace>AutoWalk</RootNamespace>
 
     <Title>AutoWalk</Title>
-    <Description>Getting pinky cramps? Try AutoWalk!</Description>
+    <Description>Adds a rebindable key for toggling auto walk so you can give your W-key finger a break!</Description>
     <PluginId>com.willis.lc.autowalk</PluginId>
-    <Version>0.0.1</Version>
+    <Version>0.0.4</Version>
     <ThunderWebsiteUrl>https://github.com/willis81808/LethalCompany-AutoWalk</ThunderWebsiteUrl>
   </PropertyGroup>
 
   <ItemGroup>
-    <ThunderDependency Include="Evaisa-HookGenPatcher-0.0.5" />
-    <ThunderDependency Include="Rune580-LethalCompany_InputUtils-0.4.4" />
+    <None Include="..\.editorconfig" Link=".editorconfig" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ThunderDependency Include="Rune580-LethalCompany_InputUtils-0.5.5" />
+    <ThunderDependency Include="willis81808-LethalSettings-1.3.0" />
   </ItemGroup>
   
   <ItemGroup>
     <Reference Include="LethalCompanyInputUtils">
-      <HintPath>..\..\..\..\AppData\Roaming\Thunderstore Mod Manager\DataFolder\LethalCompany\profiles\Mod Development\BepInEx\plugins\Rune580-LethalCompany_InputUtils\LethalCompanyInputUtils.dll</HintPath>
+      <HintPath>..\..\..\..\AppData\Roaming\Thunderstore Mod Manager\DataFolder\LethalCompany\profiles\Mod Development\BepInEx\plugins\Rune580-LethalCompany_InputUtils\LethalCompanyInputUtils\LethalCompanyInputUtils.dll</HintPath>
+      <Private>False</Private>
     </Reference>
     <Reference Include="LethalSettings">
       <HintPath>..\..\..\..\AppData\Roaming\Thunderstore Mod Manager\DataFolder\LethalCompany\profiles\Mod Development\BepInEx\plugins\LethalSettings.dll</HintPath>
-    </Reference>
-    <Reference Include="MMHOOK_Assembly-CSharp">
-      <HintPath>..\..\..\..\AppData\Roaming\Thunderstore Mod Manager\DataFolder\LethalCompany\profiles\Mod Development\BepInEx\plugins\MMHOOK\MMHOOK_Assembly-CSharp.dll</HintPath>
+      <Private>False</Private>
     </Reference>
   </ItemGroup>
   

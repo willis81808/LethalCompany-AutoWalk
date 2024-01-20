@@ -17,12 +17,14 @@ public class Plugin : BaseUnityPlugin
 
     internal static bool AutoWalkEnabled { get; set; }
 
+    internal static Keybinds keybinds { get; private set; } = new Keybinds();
+
     private void Awake()
     {
         Log = base.Logger;
         Harmony.CreateAndPatchAll(Assembly.GetExecutingAssembly(), GeneratedPluginInfo.Identifier);
 
-        Keybinds.Instance.AutoWalkKey.performed += AutoWalkKey_performed;
+        keybinds.AutoWalkKey.performed += AutoWalkKey_Pressed;
 
         ModMenu.RegisterMod(new ModMenu.ModSettingsConfig
         {
@@ -40,7 +42,7 @@ public class Plugin : BaseUnityPlugin
         }, true, true);
     }
 
-    private void AutoWalkKey_performed(InputAction.CallbackContext obj)
+    private void AutoWalkKey_Pressed(InputAction.CallbackContext obj)
     {
         if (GameNetworkManager.Instance == null || GameNetworkManager.Instance.localPlayerController == null)
         {
