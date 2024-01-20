@@ -1,12 +1,9 @@
-﻿using Dissonance;
-using GameNetcodeStuff;
-using System;
-using System.Collections.Generic;
-using System.Reflection;
+﻿using System.Collections.Generic;
+using System.Linq;
 using System.Reflection.Emit;
-using System.Text;
+using GameNetcodeStuff;
+using HarmonyLib;
 using UnityEngine;
-using UnityEngine.InputSystem;
 
 namespace AutoWalk.Patches;
 
@@ -14,7 +11,7 @@ namespace AutoWalk.Patches;
 internal class PlayerControllerB_Patch
 {
     [HarmonyTranspiler]
-    [HarmonyPatch(nameof(PlayerControllerB.Update))]
+    [HarmonyPatch("Update")]
     internal static IEnumerable<CodeInstruction> Update(IEnumerable<CodeInstruction> instructions, ILGenerator ilGenerator)
     {
         var codes = new List<CodeInstruction>(instructions);
