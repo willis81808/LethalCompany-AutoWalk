@@ -1,4 +1,4 @@
-## v0.0.4
+# v0.0.4
 
 - Implemented workaround for defect in Lethal Company Input Utils that caused the auto walk hotkey not to function
 
